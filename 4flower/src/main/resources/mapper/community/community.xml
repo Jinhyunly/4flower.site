@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.community.CommunityMapper">
+
+		<sql id="communityColumns">
+			id
+			, title
+			, content
+			, user_id
+			, DATE_FORMAT(add_date,'%Y/%m/%d') AS 'add_date'
+			, add_torcd
+			, update_date
+			, update_torcd
+			, update_count
+			, ent_kbn
+		</sql>
+
+     <select id="selectAllCommunity" parameterType="com.example.demo.entity.community.Community" resultType="com.example.demo.entity.community.Community">
+        SELECT
+        	<include refid="communityColumns" />
+        FROM
+        	board
+        WHERE
+        	ent_kbn = '1'
+        ORDER BY
+        	add_date DESC,
+        	id DESC
+        LIMIT
+					#{paginationInfo.firstRecordIndex}, #{recordsPerPage}
+    </select>
+
+    <select id="selectCommunityTotalCount"  resultType="int">
+			SELECT
+				COUNT(*)
+			FROM
+				board
+			WHERE
+				ent_kbn = '1'
+		</select>
+
+		<insert id="insertCommunity" parameterType="com.example.demo.entity.community.Community" >
+        INSERT INTO board
+        (
+        	title, content, user_id, ent_kbn
+        )
+        VALUES
+        (
+            #{param.title}, #{param.content}, #{param.user_id},'1'
+        )
+    </insert>
+
+
+    <update id="updateCommunity" parameterType="com.example.demo.entity.community.Community" >
+        UPDATE board
+        SET
+	        update_date = NOW()
+					, title = #{param.title}
+					, content = #{param.content}
+					, user_id = #{param.user_id}
+				WHERE
+					id = #{param.id}
+    </update>
+
+    <select id="selectCommunityById" parameterType="Integer" resultType="com.example.demo.entity.community.Community">
+        SELECT
+        	<include refid="communityColumns" />
+        FROM
+        	board
+        WHERE
+        	id = #{id}
+    </select>
+
+</mapper>

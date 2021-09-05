@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="loginBannerFragment" class="col-md-9 main-nav">
+		<ul class="nav text-right">
+			<li class=""  th:if="${userName != null}" th:text="${userName}"></li>
+			<!-- <li class=""  th:if="${session.userPrincipal != null}" th:text="${session.userPrincipal.getName()}"></li> -->
+			<li class=""  th:if="${logoutMessage != null}" th:text="${logoutMessage}"></li>
+		  <li class=""  th:if="${userName != null}"><button th:onclick="|location.href='@{/logout}'|" name="registration"  class="btn btn-primary btn-xs" type="Submit">Logout</button></li>
+			<li class="" th:if="${userName == null}"><a><button type="button" th:onclick="|location.href='@{/login}'|" class="btn btn-primary btn-xs">Login</button></a></li>
+			<li class="" th:if="${userName == null}"><a><button type="button" th:onclick="|location.href='@{/registration}'|"class="btn btn-primary btn-xs">Sign Up</button></a></li>
+			<!-- <li class=""><a><button type="button" th:onclick="|location.href='@{/signUp}'|"class="btn btn-primary btn-xs">Sign Up</button></a></li> -->
+		</ul>
+	</div>
+</body>
+</html>

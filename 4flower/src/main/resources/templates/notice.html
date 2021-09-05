@@ -1,0 +1,331 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>4flower</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+	<style>
+body{margin-top:20px;}
+.email-app {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app nav {
+    flex: 0 0 200px;
+    padding: 1rem;
+    border-right: 1px solid #e1e6ef;
+}
+
+.email-app nav .btn-block {
+    margin-bottom: 15px;
+}
+
+.email-app nav .nav {
+    flex-direction: column;
+}
+
+.email-app nav .nav .nav-item {
+    position: relative;
+}
+
+.email-app nav .nav .nav-item .nav-link,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle {
+    color: #151b1e;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app nav .nav .nav-item .nav-link i,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle i,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle i {
+    width: 20px;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.email-app nav .nav .nav-item .nav-link .badge,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle .badge,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle .badge {
+    float: right;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+@media (max-width: 991px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
+}
+/**
+@media (max-width: 767px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
+}
+*/
+
+@media (max-width: 575px) {
+    .email-app .message .header {
+        flex-flow: row wrap;
+    }
+    .email-app .message .header .date {
+        flex: 0 0 100%;
+    }
+}
+
+.active_menu {
+	background-color: #f6f6f6;
+	border-top-color: #3c8dbc;
+}
+	</style>
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" th:href="@{/static/css/animate.css}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" th:href="@{/static/css/icomoon.css}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" th:href="@{/static/css/bootstrap.css}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" th:href="@{/static/css/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{/static/css/owl.theme.default.min.css}">
+
+	<link rel="stylesheet" th:href="@{/static/css/style.css}">
+
+
+	<!-- Modernizr JS -->
+	<script th:src="@{/static/js/modernizr-2.6.2.min.js}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script>
+	function goBack() {
+		  window.history.back();
+		}
+	</script>
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="fh5co-navbar-brand">
+								<a class="fh5co-logo" href="/">4flower</a>
+							</div>
+						</div>
+						<div th:replace="fragments/loginBanner :: loginBannerFragment"></div>
+					</div>
+					<div class="row">
+							<ul class="nav text-center">
+								<li><a href="/"><span>Home</span></a></li>
+								<li><a href="/gallery">gallery</a></li>
+								<li class="active"><a href="/notice">community</a></li>
+								<!--
+								<li><a href="about.html">About</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								-->
+							</ul>
+					</div>
+				</nav>
+		  </div>
+		</header>
+		<hr>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="email-app">
+    <nav>
+        <!-- <a href="#" class="btn btn-danger btn-block">New Email</a> -->
+        <ul class="nav">
+        		<!-- <h3 class="grid-title"><i class="fa fa-user"></i>Community</h3> -->
+        		<!-- <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW WRITE</button> -->
+            <li class="nav-item active_menu">
+                <a class="nav-link" href="/notice"><i class="fa fa-book"></i> Notice</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/community"><i class="fa fa-users"></i> Community</a>
+            </li>
+            <!--
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-rocket"></i> Sent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-trash-o"></i> Trash</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-bookmark"></i> Important</a>
+            </li>
+             -->
+        </ul>
+    </nav>
+
+
+    <div class="col-md-9">
+						<div class="row text-right">
+							<!--
+							<div class="col-sm-6">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										Action <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Mark as read</a></li>
+										<li><a href="#">Mark as unread</a></li>
+										<li><a href="#">Mark as important</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Report spam</a></li>
+										<li><a href="#">Delete</a></li>
+									</ul>
+								</div>
+							</div>
+								-->
+							<form autocomplete="off" action="#" th:action="@{/notice/insert}">
+								<button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;WRITE</button>
+							</form>
+							<!--
+							<div class="col-md-6 search-form">
+								<form action="#" class="text-right">
+									<div class="input-group">
+										<input type="text" class="form-control input-sm" placeholder="Search">
+										<span class="input-group-btn">
+                    	<button type="submit" name="search" class="btn_ btn-primary btn-sm search"><i class="fa fa-search" ></i></button>
+                    </span>
+									</div>
+								</form>
+							</div>
+							-->
+						</div>
+
+						<div class="padding"></div>
+
+						<div class="table-responsive" style="margin:0; border:0;">
+							<table class="table" style="table-layout: fixed">
+								<thead>
+									<tr>
+										<th width="50px">#</th>
+										<th width="100px">Title</th>
+										<th width="100px">author</th>
+										<th width="100px">addDate</th>
+										<th width="50px">views</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr th:each="notice,iter:${noticeList}">
+									<!-- <td class="action"><input type="checkbox" /></td>
+									<td class="action"><i class="fa fa-star-o"></i></td>
+									<td class="action"><i class="fa fa-bookmark-o"></i></td>
+									 -->
+									<td class="action">[[${notice.id}]]</td>
+									<td class="name"><a th:href="@{'/notice/detail/'+${notice.id}+'&'+${params.currentPageNo}}">[[${notice.title}]]</a></td>
+									<td style="overflow:hidden; text-overflow:ellipsis;"><div class="subject">[[${notice.content}]]</div></td>
+									<td class="name">[[${notice.add_date}]]</td>
+									<td class="name">[[${params.currentPageNo}]]</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+						<!-- <ul class="pagination">
+							<li class="disabled"><a href="#">«</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">»</a></li>
+						</ul>
+						 -->
+					</div>
+
+</div>
+</div>
+					<th:block layout:fragment="paging">
+						<nav th:replace="fragments/noticeCommon :: pagination"></nav>
+					</th:block>
+
+
+					<!-- BEGIN COMPOSE MESSAGE -->
+
+					<!-- END COMPOSE MESSAGE -->
+				</div>
+	<!-- END INBOX -->
+<!--/row-->
+		<footer th:replace="fragments/footer :: footerFragment"></footer>
+	<!-- END: box-wrap -->
+
+	<!-- jQuery -->
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<!-- jQuery Easing -->
+	<script th:src="@{/static/js/jquery.easing.1.3.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/static/js/bootstrap.min.js}"></script>
+	<!-- Owl carousel -->
+		<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<!-- Waypoints -->
+	<script th:src="@{/static/js/jquery.waypoints.min.js}"></script>
+	<!-- Parallax Stellar -->
+	<script th:src="@{/static/js/jquery.stellar.min.js}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script th:src="@{/static/js/main.js}"></script>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		function movePage(uri, queryString) {
+			location.href = uri + queryString;
+		}
+
+		/*]]>*/
+	</script>
+	</body>
+</html>
+

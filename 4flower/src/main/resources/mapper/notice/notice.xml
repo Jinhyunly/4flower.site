@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.notice.NoticeMapper">
+
+		<sql id="noticeColumns">
+			id
+			, title
+			, content
+			, user_id
+			, DATE_FORMAT(add_date,'%Y/%m/%d') AS 'add_date'
+			, add_torcd
+			, update_date
+			, update_torcd
+			, update_count
+			, ent_kbn
+		</sql>
+
+     <select id="selectAllNotice" parameterType="com.example.demo.entity.notice.Notice" resultType="com.example.demo.entity.notice.Notice">
+        SELECT
+        	<include refid="noticeColumns" />
+        FROM
+        	notice
+        WHERE
+        	ent_kbn = '1'
+        ORDER BY
+        	add_date DESC,
+        	id DESC
+        LIMIT
+					#{paginationInfo.firstRecordIndex}, #{recordsPerPage}
+    </select>
+
+    <select id="selectNoticeTotalCount"  resultType="int">
+			SELECT
+				COUNT(*)
+			FROM
+				notice
+			WHERE
+				ent_kbn = '1'
+		</select>
+
+		<insert id="insertNotice" parameterType="com.example.demo.entity.notice.Notice" >
+        INSERT INTO notice
+        (
+        	title, content, ent_kbn
+        )
+        VALUES
+        (
+            #{param.title}, #{param.content},'1'
+        )
+    </insert>
+
+
+    <update id="updateNotice" parameterType="com.example.demo.entity.notice.Notice" >
+        UPDATE notice
+        SET
+	        update_date = NOW()
+					, title = #{param.title}
+					, content = #{param.content}
+					, user_id = #{param.user_id}
+				WHERE
+					id = #{param.id}
+    </update>
+
+    <select id="selectNoticeById" parameterType="Integer" resultType="com.example.demo.entity.notice.Notice">
+        SELECT
+        	<include refid="noticeColumns" />
+        FROM
+        	notice
+        WHERE
+        	id = #{id}
+    </select>
+
+</mapper>

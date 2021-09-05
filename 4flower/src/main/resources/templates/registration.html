@@ -1,0 +1,163 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>4flower</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+
+		<!-- Animate.css -->
+	<link rel="stylesheet"  th:href="@{/static/css/animate.css}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" th:href="@{/static/css/icomoon.css}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" th:href="@{/static/css/bootstrap.css}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" th:href="@{/static/css/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{/static/css/owl.theme.default.min.css}">
+
+	<link rel="stylesheet" th:href="@{/static/css/style.css}">
+
+
+	<!-- Modernizr JS -->
+	<script th:src="@{/static/js/modernizr-2.6.2.min.js}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="fh5co-navbar-brand">
+								<a class="fh5co-logo" href="/">4flower</a>
+							</div>
+						</div>
+						<div th:replace="fragments/loginBanner :: loginBannerFragment"></div>
+					</div>
+					<div class="row">
+							<ul class="nav text-center">
+								<li class=""><a href="/"><span>Home</span></a></li>
+								<li><a href="/gallery">gallery</a></li>
+								<li><a href="/notice">community</a></li>
+								<!--
+								<li><a href="about.html">About</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								-->
+							</ul>
+					</div>
+				</nav>
+		  </div>
+		</header>
+		<!-- END: header -->
+		<div class="container">
+			<!--
+			<form th:action="@{/registration}" method="get">
+				<button class="btn btn-md btn-warning btn-block" type="submit">Go To Registration Page</button>
+			</form>
+			 -->
+				<div class="row">
+					<div class="container">
+             <span th:utext="${successMessage}"></span>
+             <form autocomplete="off" action="#" th:action="@{/registration}" th:object="${user}" method="post" class="form-horizontal" role="form">
+							<h2>Sign Up</h2>
+
+							<div class="form-group">
+								<div class="">
+								<label th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}" class="validation-message"></label>
+								<input type="text" th:field="*{loginId}" placeholder="LoginId" class="form-control" required/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="">
+									<label th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="validation-message"></label>
+									<input type="text" th:field="*{userName}" placeholder="UserName" class="form-control" required/>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="">
+									<input type="password" th:field="*{password}" placeholder="Password" class="form-control" required/>
+									<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-message"></label>
+								</div>
+							</div>
+             <div class="form-group">
+               <div class="">
+                	<input type="password" th:field="*{passwordConfirm}" placeholder="Password Confirm" class="form-control" required/>
+									<label th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}" class="validation-message"></label>
+               </div>
+             </div>
+							<div class="form-group">
+								<div class="">
+                	<button type="submit" class="btn btn-primary btn-block">Register User</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+		<footer th:replace="fragments/footer :: footerFragment"></footer>
+		</div>
+	<!-- END: box-wrap -->
+
+	<!-- jQuery -->
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<!-- jQuery Easing -->
+	<script th:src="@{/static/js/jquery.easing.1.3.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/static/js/bootstrap.min.js}"></script>
+	<!-- Owl carousel -->
+		<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<!-- Waypoints -->
+	<script th:src="@{/static/js/jquery.waypoints.min.js}"></script>
+	<!-- Parallax Stellar -->
+	<script th:src="@{/static/js/jquery.stellar.min.js}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script th:src="@{/static/js/main.js}"></script>
+
+	</body>
+</html>
+

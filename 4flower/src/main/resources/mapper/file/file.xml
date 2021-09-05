@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.file.FileMapper">
+
+    <resultMap id="Files" type="com.example.demo.entity.file.Files">
+        <result property="galleryId" column="gallery_id" />
+        <result property="galleryFileName" column="gallery_fileName" />
+        <result property="galleryFileOriName" column="gallery_fileOriName" />
+        <result property="galleryUrl" column="gallery_url" />
+        <result property="galleryTitle" column="gallery_title" />
+        <result property="ent_kbn" column="ent_kbn" />
+    </resultMap>
+
+    <select id="findByGalleryId" resultType="com.example.demo.entity.file.Files">
+    <!-- resultMap="Files" -->
+        SELECT
+            gallery_id, gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, ent_kbn
+        FROM
+            gallery
+				WHERE
+					 gallery_id = #{galleryId}
+    </select>
+
+    <delete id="deleteByGalleryId">
+    <!-- resultMap="Files" -->
+        Delete
+        FROM
+            gallery
+				WHERE
+					 gallery_id = #{galleryId}
+    </delete>
+
+
+    <insert id="insertFile" parameterType="com.example.demo.entity.file.Files" >
+        INSERT INTO gallery
+        (
+            gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, ent_kbn
+        )
+        VALUES
+        (
+            #{param.gallery_fileName}, #{param.gallery_fileOriName}, #{param.gallery_url}, #{param.gallery_title}, #{param.ent_kbn}
+        )
+    </insert>
+
+     <select id="selectAll" resultType="com.example.demo.entity.file.Files">
+        SELECT * FROM gallery ORDER BY gallery_id
+    </select>
+
+</mapper>

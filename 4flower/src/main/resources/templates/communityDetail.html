@@ -1,0 +1,401 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>4flower</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+	<style>
+body{margin-top:20px;}
+.email-app {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app nav {
+    flex: 0 0 200px;
+    padding: 1rem;
+    border-right: 1px solid #e1e6ef;
+}
+
+.email-app nav .btn-block {
+    margin-bottom: 15px;
+}
+
+.email-app nav .nav {
+    flex-direction: column;
+}
+
+.email-app nav .nav .nav-item {
+    position: relative;
+}
+
+.email-app nav .nav .nav-item .nav-link,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle {
+    color: #151b1e;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app nav .nav .nav-item .nav-link i,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle i,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle i {
+    width: 20px;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.email-app nav .nav .nav-item .nav-link .badge,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle .badge,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle .badge {
+    float: right;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+.email-app main {
+    min-width: 0;
+    flex: 1;
+    padding: 1rem;
+}
+
+.email-app .inbox .toolbar {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app .inbox .messages {
+    padding: 0;
+    list-style: none;
+}
+
+.email-app .inbox .message {
+    position: relative;
+    padding: 1rem 1rem 1rem 2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app .inbox .message:hover {
+    background: #f9f9fa;
+}
+
+.email-app .inbox .message .actions {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-app .inbox .message .actions .action {
+    width: 2rem;
+    margin-bottom: 0.5rem;
+    color: #c0cadd;
+    text-align: center;
+}
+
+.email-app .inbox .message a {
+    color: #000;
+}
+
+.email-app .inbox .message a:hover {
+    text-decoration: none;
+}
+
+.email-app .inbox .message.unread .header,
+.email-app .inbox .message.unread .title {
+    font-weight: bold;
+}
+
+.email-app .inbox .message .header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+}
+
+.email-app .inbox .message .header .date {
+    margin-left: auto;
+}
+
+.email-app .inbox .message .title {
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.email-app .inbox .message .description {
+    font-size: 12px;
+}
+
+.email-app .message .toolbar {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app .message .details .title {
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.email-app .message .details .header {
+    display: flex;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: 1px solid #e1e6ef;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.email-app .message .details .header .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.email-app .message .details .header .from {
+    font-size: 12px;
+    color: #9faecb;
+    align-self: center;
+}
+
+.email-app .message .details .header .from span {
+    display: block;
+    font-weight: bold;
+}
+
+.email-app .message .details .header .date {
+    margin-left: auto;
+}
+
+.email-app .message .details .attachments {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-top: 3px solid #f9f9fa;
+    border-bottom: 3px solid #f9f9fa;
+}
+
+.email-app .message .details .attachments .attachment {
+    display: flex;
+    margin: 0.5rem 0;
+    font-size: 12px;
+    align-self: center;
+}
+
+.email-app .message .details .attachments .attachment .badge {
+    margin: 0 0.5rem;
+    line-height: inherit;
+}
+
+.email-app .message .details .attachments .attachment .menu {
+    margin-left: auto;
+}
+
+.email-app .message .details .attachments .attachment .menu a {
+    padding: 0 0.5rem;
+    font-size: 14px;
+    color: #e1e6ef;
+}
+
+@media (max-width: 767px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .email-app .message .header {
+        flex-flow: row wrap;
+    }
+    .email-app .message .header .date {
+        flex: 0 0 100%;
+    }
+}
+.active_menu {
+	background-color: #f6f6f6;
+	border-top-color: #3c8dbc;
+}
+	</style>
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" th:href="@{/static/css/animate.css}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" th:href="@{/static/css/icomoon.css}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" th:href="@{/static/css/bootstrap.css}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" th:href="@{/static/css/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{/static/css/owl.theme.default.min.css}">
+
+	<link rel="stylesheet" th:href="@{/static/css/style.css}">
+
+
+	<!-- Modernizr JS -->
+	<script th:src="@{/static/js/modernizr-2.6.2.min.js}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script>
+	function goBack() {
+		  window.history.back();
+		}
+	</script>
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="fh5co-navbar-brand">
+								<a class="fh5co-logo" href="/">4flower</a>
+							</div>
+						</div>
+						<div th:replace="fragments/loginBanner :: loginBannerFragment"></div>
+					</div>
+					<div class="row">
+							<ul class="nav text-center">
+								<li><a href="/"><span>Home</span></a></li>
+								<li><a href="/gallery">gallery</a></li>
+								<li class="active"><a href="/community">community</a></li>
+								<!--
+								<li><a href="about.html">About</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								-->
+							</ul>
+					</div>
+				</nav>
+		  </div>
+		</header>
+		<hr>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="email-app">
+    <nav>
+        <!-- <a href="#" class="btn btn-danger btn-block">New Email</a> -->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/notice"><i class="fa fa-book"></i> Notice <span class="badge badge-danger">4</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active_menu" href="/community"><i class="fa fa-users"></i> Community</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <p class="text-center">Detail Write</p>
+        <form th:action="@{'/community/update/'+${community.id}}" th:object="${community}" method="get">
+				<div class="row">
+            <div class="col-sm-11 ml-auto">
+                <div class="form-group mb-3">
+                <label for="bcc" class="col-2 col-sm-1 col-form-label">TITLE</label>
+                    <input type="text" th:field="*{title}" class="form-control" id="to" style="border: none" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11 ml-auto">
+                <div class="form-group mb-3">
+                <label for="bcc" class="col-2 col-sm-1 col-form-label">CONTENT</label>
+                    <textarea class="form-control" th:field="*{content}" id="message" name="body" rows="12" style="border: none; resize: none;" readonly></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-sm-11 ml-auto">
+	        	<div class="form-group mb-3">
+                <div class="form-group text-center">
+                		<button type="button" onclick="goBack()" class="btn btn-light">Back</button>
+                    <button type="submit" class="btn btn-light">Update</button>
+                    <!--
+                    <button type="submit" class="btn btn-light">Draft</button>
+                    <button type="submit" class="btn btn-danger">Discard</button>
+                     -->
+                </div>
+	          </div>
+        	</div>
+        </div>
+        <input type="hidden" th:field="*{currentPageNo}">
+        </form>
+    </main>
+</div>
+</div>
+
+
+					<!-- BEGIN COMPOSE MESSAGE -->
+
+					<!-- END COMPOSE MESSAGE -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END INBOX -->
+</div>
+</div>
+<!--/row-->
+		<footer th:replace="fragments/footer :: footerFragment"></footer>
+	</div>
+	<!-- END: box-wrap -->
+
+	<!-- jQuery -->
+	<script th:src="@{/static/js/jquery.min.js}"></script>
+	<!-- jQuery Easing -->
+	<script th:src="@{/static/js/jquery.easing.1.3.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/static/js/bootstrap.min.js}"></script>
+	<!-- Owl carousel -->
+		<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<!-- Waypoints -->
+	<script th:src="@{/static/js/jquery.waypoints.min.js}"></script>
+	<!-- Parallax Stellar -->
+	<script th:src="@{/static/js/jquery.stellar.min.js}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script th:src="@{/static/js/main.js}"></script>
+
+	</body>
+</html>
+
