@@ -10,13 +10,14 @@
         <result property="galleryFileOriName" column="gallery_fileOriName" />
         <result property="galleryUrl" column="gallery_url" />
         <result property="galleryTitle" column="gallery_title" />
+        <result property="galleryContent" column="gallery_content" />
         <result property="ent_kbn" column="ent_kbn" />
     </resultMap>
 
     <select id="findByGalleryId" resultType="com.example.demo.entity.file.Files">
     <!-- resultMap="Files" -->
         SELECT
-            gallery_id, gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, ent_kbn
+            gallery_id, gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, gallery_content, ent_kbn
         FROM
             gallery
 				WHERE
@@ -36,11 +37,11 @@
     <insert id="insertFile" parameterType="com.example.demo.entity.file.Files" >
         INSERT INTO gallery
         (
-            gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, ent_kbn
+            gallery_fileName, gallery_fileOriName, gallery_url, gallery_title, gallery_content, ent_kbn
         )
         VALUES
         (
-            #{param.gallery_fileName}, #{param.gallery_fileOriName}, #{param.gallery_url}, #{param.gallery_title}, #{param.ent_kbn}
+            #{param.gallery_fileName}, #{param.gallery_fileOriName}, #{param.gallery_url}, #{param.gallery_title}, #{param.gallery_content}, #{param.ent_kbn}
         )
     </insert>
 

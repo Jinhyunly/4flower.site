@@ -92,7 +92,8 @@
 							<ul class="nav text-center">
 								<li class=""><a href="/"><span>Home</span></a></li>
 								<li><a href="/gallery">gallery</a></li>
-								<li><a href="/notice">community</a></li>
+								<li><a href="/inquire">inquire</a></li>
+								<!-- <li><a href="/notice">community</a></li> -->
 								<!--
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
@@ -117,8 +118,9 @@
 					<!-- <img class="img-fluid img-thumbnail" th:src="@{/static/gallery/{name}(name=${file.gallery_fileName})" alt="flower"> -->
 					<img id="detail_gallery" class="img-fluid img-thumbnail" th:src="@{'/static/gallery/'+${file.gallery_fileName}}" width="600px" alt="">
 					<div class="row">
-			      	<label for="galleryTitle">[[${file.gallery_title}]]</label>
+			      	<h3 style="margin:0">[[${file.gallery_title}]]</h3>
 			      	<!-- <label for="exampleInputEmail1">[[${file.gallery_fileName}]]</label> -->
+			      	<label for="galleryContent">[[${file.gallery_content}]]</label>
 			      	<br>
 							<form th:action="@{'/gallery/'+${file.gallery_id}}" method="post">
 			      	<input type="button" class="btn btn-primary" onClick="javascript:history.back()" value="Back">

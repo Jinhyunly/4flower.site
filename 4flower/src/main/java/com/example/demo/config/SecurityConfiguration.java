@@ -60,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       http
           .authorizeRequests()
           		.antMatchers("/resources/**", "/static/**", "/css/**", "/fonts/**", "/js/**", "/images/**", "/icon/**", "/sass/**").permitAll()
-              .antMatchers("/","/logout","/community/**","/notice/**","/login","/gallery/**","/registration").permitAll()
+              .antMatchers("/","/logout","/community/**","/notice/**","/login","/gallery/**","/registration","/inquire/**").permitAll()
               .antMatchers("/gallery/fileinsert").authenticated() //.hasAuthority("ADMIN") // ADMIN 권한의 유저만 /home 에 접근가능
           .anyRequest()
               .authenticated()

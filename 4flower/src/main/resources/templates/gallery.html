@@ -79,7 +79,8 @@
 							<ul class="nav text-center">
 								<li><a href="/"><span>Home</span></a></li>
 								<li class="active"><a href="/gallery">gallery</a></li>
-								<li><a href="/notice">community</a></li>
+								<li><a href="/inquire">inquire</a></li>
+								 <!-- <li><a href="/notice">community</a></li> -->
 								<!--
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
@@ -108,7 +109,11 @@
 			  <div class="container ">
 					  <div class="form-group">
 					    <label for="inputText">Title</label>
-					    <input type="text" class="form-control" name="galleryTitle" id="galleryTitle" placeholder="Title" required>
+					    <input type="text" class="form-control" name="galleryTitle" id="galleryTitle" placeholder="Title" maxlength="50" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="inputText">Content</label>
+					    <textarea class="form-control" name="galleryContent" id="" rows="10" placeholder="Content" style="resize: none;" maxlength="1000" required></textarea>
 					  </div>
 					  <div class="form-group input-group-sm mb-3">
 					    <label for="inputFile">File input</label>

@@ -82,7 +82,8 @@
 							<ul class="nav text-center">
 								<li class=""><a href="/"><span>Home</span></a></li>
 								<li><a href="/gallery">gallery</a></li>
-								<li><a href="/notice">community</a></li>
+								<li><a href="/inquire">inquire</a></li>
+								<!-- <li><a href="/notice">community</a></li> -->
 								<!--
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
@@ -104,7 +105,7 @@
 					 	<h5 class=""  th:if="${sessiontMessage != null}" th:text="${sessiontMessage}" style="color: #FF1C19;"></h5>
 					 	<h5 class=""  th:if="${loginErrMessage != null}" th:text="${loginErrMessage}" style="color: #FF1C19;"></h5>
 		        <form th:action="@{/login}" method="POST" class="form-signin" id="login_form" name="login_form">
-					<h2 class="form-signin-heading">Login</h2>
+					<h2 class="form-signin-heading">Admin Login</h2>
 					<br/>
 
 					<input type="text" id="loginId" name="loginId"  th:placeholder="LoginId" class="form-control" /> <br/>

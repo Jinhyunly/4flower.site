@@ -11,5 +11,6 @@ public class Files {
 	String gallery_fileOriName;
 	String gallery_url;
 	String gallery_title;
+	String gallery_content;
 	String ent_kbn;
 }

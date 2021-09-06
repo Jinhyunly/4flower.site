@@ -160,7 +160,7 @@ public class GalleryController {
 	public ModelAndView galleryFileinsert(HttpServletRequest request, @RequestParam(name = "file") MultipartFile file, Principal principal) throws Exception {
 
 		String galleryTitle = request.getParameter("galleryTitle");
-
+		String galleryContent = request.getParameter("galleryContent");
 
 
 		Files fileObj = new Files();
@@ -197,6 +197,7 @@ public class GalleryController {
 		fileObj.setGallery_url(fileUrl + destinationFileName);
 		//fileObj.setGallery_url("/static/gallery");
 		fileObj.setGallery_title(galleryTitle);
+		fileObj.setGallery_content(galleryContent);
 		fileObj.setEnt_kbn("1");
 
 		fileService.saveFiles(fileObj);
