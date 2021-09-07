@@ -15,4 +15,5 @@ public interface FileMapper {
 	int insertFile(@Param("param") Files param);
 	List<Files> selectAll();
 	int deleteByGalleryId(@Param("galleryId") String galleryId);
+	int updateByFile(@Param("param") Files file);
 }

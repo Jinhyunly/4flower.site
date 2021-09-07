@@ -33,6 +33,14 @@
 					 gallery_id = #{galleryId}
     </delete>
 
+    <update id="updateByFile" >
+        UPDATE gallery
+        SET
+	       	gallery_title = #{param.gallery_title}
+					, gallery_content = #{param.gallery_content}
+				WHERE
+					gallery_id = #{param.gallery_id}
+    </update>
 
     <insert id="insertFile" parameterType="com.example.demo.entity.file.Files" >
         INSERT INTO gallery
