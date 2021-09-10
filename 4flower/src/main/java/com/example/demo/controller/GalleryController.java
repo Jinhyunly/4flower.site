@@ -5,6 +5,7 @@ import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -110,14 +111,14 @@ public class GalleryController {
 //	}
 
 	@PostMapping("/gallery/{id}")
-	public ModelAndView galleryPost(@PathVariable("id") String id, HttpServletRequest request, Principal principal) throws Exception{
+	public ModelAndView galleryPost(@PathVariable("id") String id, @Valid Files file, HttpServletRequest request, Principal principal) throws Exception{
 		String method = request.getParameter("method");
 
 		ModelAndView modelAndView = new ModelAndView();
 
 		if("delete".equals(method)) {
-			Files file = fileService.getFileById(id);
-			String sourceFileName = file.getGallery_fileName();
+			Files file1 = fileService.getFileById(id);
+			String sourceFileName = file1.getGallery_fileName();
 //			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
 
 			String path = new ClassPathResource("/static/gallery").getFile().getAbsolutePath();
@@ -151,6 +152,37 @@ public class GalleryController {
     modelAndView.setViewName("gallery");
 
 		return modelAndView;
+
+	}
+
+
+	@PostMapping("/gallery/update/{id}")
+	public ModelAndView galleryUpdatePost(@PathVariable("id") String id, @Valid Files file, HttpServletRequest request, Principal principal) throws Exception{
+
+		ModelAndView modelAndView = new ModelAndView();
+		String method = request.getParameter("method");
+
+
+		try {
+
+			if("update".equals(method)) {
+				fileService.updateFile(file);
+
+				Authentication authentication = (Authentication) principal;
+				MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+				UserInfo userInfo = userDetails.getUserInfo();
+				modelAndView.addObject("userName", userInfo.getUserName());
+
+				if("momo".equals(userInfo.getLoginId())){
+					modelAndView.addObject("userId", userInfo.getLoginId());
+				}
+			}
+
+		}catch(Exception ex) {
+
+		}
+
+		return new ModelAndView("redirect:/gallery/"+file.getGallery_id());
 
 	}
 
