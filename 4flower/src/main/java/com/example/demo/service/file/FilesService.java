@@ -40,4 +40,8 @@ public class FilesService {
 	public void deleteFileById(String galleryId) {
 		 fileMapper.deleteByGalleryId(galleryId);
 	}
+
+	public void updateFile(Files file) {
+		fileMapper.updateByFile(file);
+	}
 }
