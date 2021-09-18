@@ -12,7 +12,30 @@
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
+	<style>
+	.index_font{
+		font-size: 0.8em;
+	}
+	.index_font2{
+		font-size: 0.6em;
+	}
+	.mainImg{
+   }
 
+	@media (max-width: 767px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
+	}
+
+	@media (max-width: 575px) {
+
+}
+
+	</style>
   <!--
 	//////////////////////////////////////////////////////
 
@@ -95,163 +118,85 @@
 		  </div>
 		</header>
 		<!-- END: header -->
-		<div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn">
-			<div class="item"><img th:src="@{/static/images/4flower_main.jpg}" alt="image"></div>
-			<div class="item"><img th:src="@{/static/images/4flower_main.jpg}" alt="image"></div>
+		<!-- <div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn"> -->
+		<div class="text-center mainImg">
+			<img th:src="@{/static/images/4flower_main.jpg}" alt="image" height= "" width="95%">
 			<!--
 			<div class="item"><a href="images/img_large_3.jpg" class="image-popup"><img src="images/img_large_3.jpg" alt="image"></a></div>
 			<div class="item"><a href="images/img_large_4.jpg" class="image-popup"><img src="images/img_large_4.jpg" alt="image"></a></div>
 			<div class="item"><a href="images/img_large_5.jpg" class="image-popup"><img src="images/img_large_5.jpg" alt="image"></a></div>
 			-->
 		</div>
+		<br>
 		<div id="fh5co-media-section">
 			<div class="container">
 				<div class="row animate-box">
-					<div class="text-center heading-section">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>4flower</h3>
-						<p>
-							主に神奈川県内で、ワークショップの開催やオーダー注文でのフラワーギフトを制作しています。<br>
-							ワークショップのお問い合わせ、ご連絡は<a href="https://www.instagram.com/4flower___/">4flower</a>インスタグラムDMへお願いいたします。
+						<p class="index_font">
+							主に神奈川県内で、フラワーワークショップ開催の活動をしています。<br>
+							お問い合わせ、ご連絡は<a href="https://www.instagram.com/4flower___/">4flower</a>インスタグラムDMへお願いいたします。
 						</p>
 					</div>
 				</div>
-				<!--
-				<div class="row">
-					<div class="col-md-7 animate-box">
-						<div class="fh5co-cover" style="background-image: url(images/work-1.jpg);">
-							<div class="desc">
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-								<span>Web Design</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-5">
-						<div class="fh5co-cover">
-							<div class="fh5co-cover-hero animate-box">
-								<div class="fh5co-cover-thumb" style="background-image: url(images/work-2.jpg);"></div>
-								<div class="desc-thumb">
-									<p>Far far away, behind the word mountains, far from the</p>
-									<span>Web Design</span>
-								</div>
-							</div>
-
-							<div class="fh5co-cover-hero animate-box">
-								<div class="fh5co-cover-thumb" style="background-image: url(images/work-3.jpg);"></div>
-								<div class="desc-thumb">
-									<p>Far far away, behind the word mountains, far from the</p>
-									<span>User Experience</span>
-								</div>
-							</div>
-
-							<div class="fh5co-cover-hero animate-box">
-								<div class="fh5co-cover-thumb" style="background-image: url(images/work-4.jpg);"></div>
-								<div class="desc-thumb">
-									<p>Far far away, behind the word mountains, far from the</p>
-									<span>Web Developement</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				-->
 			</div>
 		</div>
-		<!-- END fh5co-media-section -->
-		<!--
-		<div id="fh5co-intro-section">
-			<div class="fh5co-intro-cover text-center animate-box" data-animate-effect="fadeIn" data-stellar-background-ratio="0.5" style="background-image: url(images/intro.jpg);">
-				<a href="#" class="btn">Serving You Is Our First Priority</a>
-			</div>
-		</div>
-		-->
 		<!-- END fh5co-intro-section -->
 
 		<div id="fh5co-product-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box" style="margin-bottom:10px">
 						<h3>workshop</h3>
-						<p>
-							<b>〈自分で束ねる秋のミニブーケ〉</b><br>
-							9/25（土）11:00-12:30<br><br>
-							季節の花材と自然な雰囲気のあるグリーンを使ってミニブーケを束ねます。<br>
-							束ねた後は、ギフト用にラッピングまでしていただきます。<br>
-							ご自身へのご褒美や、大切な人へのプレゼントにもぴったりです。<br><br>
+						<p class="index_font">
+							<b>〈秋のミニブーケ〉</b><br><br>
+							季節の花材と自然な雰囲気のあるグリーンを使ってミニブーケを束ねます。
+							(最後はラッピングまでしてお持ち帰りいただきます)<br><br>
+							ご自身へのご褒美や、大切な人への贈り物にもぴったり。<br><br>
+							お花がよりきれいに可愛く見えるような花選びのポイントもお伝えします。<br><br>
+							お花に触れたことがない若い方たちに、お花の魅力を伝えられたら嬉しいです。<br>
+							ぜひお花に触れにいらしてください♪<br><br>
 							場所：横浜駅付近<br>
 							参加費：¥3500（込）<br>
-							持ち物：花ばさみ（お持ちであれば）、持ち帰り用のマチ付きの袋<br>
-							※コロナ対策のため、定員4名様とさせていただきます。<br><br><br>
-
-							<b>〈Home party× flower〉</b><br>
-							10/9（日）午前の部11:00-12:30<br>
-              10/9（日）午後の部14:00-15:30<br><br>
-              「ホームパーティープランナー<a href="https://www.instagram.com/mina_k88_cookingram/">mina_k88_cookingram</a>と<a href="https://www.instagram.com/4flower___/">4flower</a>の<br>合同ワークショップ」<br>
-              女子の憧れ、ディズニープリンセス・ラプンツェルの世界をイメージしたホームパーティーイベントを開催します！
-              当日は<a href="https://www.instagram.com/mina_k88_cookingram/">mina_k88_cookingram</a>による簡単かわいいスイーツ作りや、
-              <a href="https://www.instagram.com/4flower___/">4flower</a>によるフラワーフォトブースも準備しております。<br>
-              お作りいただいたスイーツとお花のお土産もお渡ししますので、<br>持ち帰り用の袋をご用意ください。<br><br>
-              場所：東京/町田駅付近<br>
-              参加費：¥3500（込）<br>
-              ※コロナ対策のため、各回定員6名様とさせていただきます。<br>
-
+							持ち物：花ばさみ（お持ちであれば）、持ち帰り用のマチ付きの袋<br><br>
+							※コロナ対策のため、定員4名様とさせていただきます。
 						</p>
 					</div>
 				</div>
-				<div class="owl-carousel owl-carousel2">
-					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery1.jpg}" alt="image" object-fit=fill></div>
-					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery2.jpg}" alt="image"></div>
-					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery3.jpg}" alt="image"></div>
-					<!--
-						<div class="item animate-box"><a href="images/product-4.jpg" class="image-popup"><img src="images/product-4.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-2.jpg" class="image-popup"><img src="images/product-2.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-3.jpg" class="image-popup"><img src="images/product-3.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-4.jpg" class="image-popup"><img src="images/product-4.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-2.jpg" class="image-popup"><img src="images/product-2.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-3.jpg" class="image-popup"><img src="images/product-3.jpg" alt="image"></a></div>
-					<div class="item animate-box"><a href="images/product-4.jpg" class="image-popup"><img src="images/product-2.jpg" alt="image"></a></div>
-					-->
+				<div class="owl-carousel owl-carousel2" style="margin-bottom:5px">
+					<div class="item animate-box" style="width:100%"><img th:src="@{/static/images/flower_gallery2.jpg}" alt="image" style="height:467;"></div>
+					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery1.jpg}" alt="image" style="height:467"></div>
+					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery3.jpg}" alt="image" style="height:467"></div>
+					<div class="item animate-box"><img th:src="@{/static/images/flower_gallery4.jpg}" alt="image" style="height:467"></div>
 				</div>
-			</div>
-		</div>
-
-		<!-- END fh5co-product-section -->
-		<!--
-		<div id="fh5co-section" class="fh5co-grey-section">
-			<div class="container">
+				<p class="index_font2 text-center">※画像はイメージです。</p><br>
 				<div class="row">
-					<div class="col-md-4 animate-box">
-						<div class="fh5co-inner">
-							<i class="icon-shield"></i>
-							<div class="holder-section">
-								<h3>About Us</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="fh5co-inner">
-							<i class="icon-strategy"></i>
-							<div class="holder-section">
-								<h3>What We Doe</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="fh5co-inner">
-							<i class="icon-bike"></i>
-							<div class="holder-section">
-								<h3>Why We Choose Us</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box" style="margin-bottom:10px">
+						<p class="index_font">
+							<b>〈Home party× flower〉</b><br><br>
+							10/9（日）午前の部11:00-12:30<br>
+              10/9（日）午後の部14:00-15:30<br><br>
+              【ホームパーティープランナー<a href="https://www.instagram.com/mina_k88_cookingram/">mina_k88_cookingram</a>&<a href="https://www.instagram.com/4flower___/">4flower</a>&nbsp;合同ワークショップ】<br><br>
+              ディズニープリンセス・ラプンツェルの世界をイメージしたホームパーティーイベントを開催します！<br><br>
+              当日はmina_k88_cookingramによる簡単かわいいスイーツ作りや、 4flowerによるフラワーフォトブースもご用意いたします。<br><br>
+              お作りいただいたスイーツはお持ち帰りいただきますので、持ち帰り袋をお持ちください。<br>
+              お土産としてお花もお渡ししますので、持ち歩きしやすいマチつきの紙袋などが便利かと思います。<br><br>
+              非日常で特別な空間で皆さまをお待ちしております。<br>
+              当日はぜひお洒落をしてお越しくださいね！<br><br>
+              場所：東京/町田駅付近<br>
+              参加費：¥3500（込）<br><br>
+              ※コロナ対策のため、各回定員6名様とさせていただきます。
+						</p>
 					</div>
 				</div>
+				<div class="owl-carousel owl-carousel2" style="margin-bottom:10px">
+					<div class="item animate-box"><img th:src="@{/static/images/home_party1.jpg}" alt="image" object-fit=fill></div>
+					<div class="item animate-box"><img th:src="@{/static/images/home_party2.jpg}" alt="image"></div>
+					<div class="item animate-box"><img th:src="@{/static/images/home_party3.jpg}" alt="image" object-fit=fill></div>
+				</div>
+				<p class="index_font2 text-center">※画像はイメージです。<br>各回によって異なります。</p>
 			</div>
 		</div>
-		-->
 		<footer th:replace="fragments/footer :: footerFragment"></footer>
 	</div>
 	<!-- END: box-wrap -->
@@ -263,7 +208,7 @@
 	<!-- Bootstrap -->
 	<script th:src="@{/static/js/bootstrap.min.js}"></script>
 	<!-- Owl carousel -->
-		<script th:src="@{/static/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/static/js/owl.carousel.min.js}"></script>
 	<!-- Waypoints -->
 	<script th:src="@{/static/js/jquery.waypoints.min.js}"></script>
 	<!-- Parallax Stellar -->
