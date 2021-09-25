@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -20,14 +20,14 @@ body {
 }
 
 a {
-  color: #a980cd;
+  color: #E9967A;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover {
   text-decoration: underline !important;
-  color: #a980cd !important;
+  color: #E9967A !important;
 }
 a:focus, a:active {
   outline: none;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 #fh5co-header .nav li.active a {
-  color: #a980cd;
+  color: #E9967A;
   background: transparent;
   position: relative;
 }
@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 50%;
   border-radius: 50%;
   top: -20px;
-  background: #a980cd;
+  background: #E9967A;
   content: '';
   left: 50%;
   margin-left: -4px;
@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 480px) {
   #fh5co-header .nav li.active a {
     border-bottom: 2px solid transparent;
-    color: #a980cd;
+    color: #E9967A;
   }
 }
 @media screen and (max-width: 992px) {
@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .owl-carousel-fullwidth.owl-theme .owl-dots {
   bottom: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -551,7 +551,7 @@ ba
 .fh5co-inner .holder-section h3 {
   font-size: 20px;
   text-transform: uppercase;
-  color: #a980cd;
+  color: #E9967A;
   letter-spacing: 1px;
   font-weight: bold;
 }
@@ -659,7 +659,7 @@ ba
 }
 .contact-info li a {
   font-weight: 400 !important;
-  color: #a980cd;
+  color: #E9967A;
 }
 @media screen and (max-width: 768px) {
   .contact-info {
@@ -723,7 +723,7 @@ input[type="text"] {
 }
 
 .heading-section {
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 .heading-section h3 {
   font-size: 20px;
@@ -731,7 +731,7 @@ input[type="text"] {
   letter-spacing: 2px;
   text-transform: uppercase;
   position: relative;
-  color: #a980cd;
+  color: #E9967A;
 }
 
 .btn {
@@ -748,14 +748,14 @@ input[type="text"] {
   transition: 0.3s;
 }
 .btn.btn-primary {
-  background: #a980cd;
+  background: #E9967A;
   color: #fff;
   border: none !important;
   border: 2px solid transparent !important;
 }
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   box-shadow: none;
-  background: #a980cd;
+  background: #E9967A;
 }
 .btn:hover, .btn:active, .btn:focus {
   background: #393e46 !important;
@@ -792,7 +792,7 @@ input[type="text"] {
   transition: 0.5s;
 }
 .social li a:hover, .social li a:focus {
-  color: #a980cd;
+  color: #E9967A;
   text-decoration: none;
 }
 .social li a i {
