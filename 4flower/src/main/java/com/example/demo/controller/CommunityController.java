@@ -27,7 +27,6 @@ public class CommunityController {
 	@Autowired
   private CommunityService communityService;
 
-	//@RequestMapping(value = "**/community", method = RequestMethod.GET)
 	@RequestMapping(value = "/community")
 	public ModelAndView community(@ModelAttribute("params") Community params, Principal principal) {
 
@@ -38,7 +37,6 @@ public class CommunityController {
 			MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
 			UserInfo userInfo = userDetails.getUserInfo();
 			modelAndView.addObject("userName", userInfo.getUserName());
-//			modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 
 		}catch(Exception e) {
 		}
@@ -63,17 +61,9 @@ public class CommunityController {
 			MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
 			UserInfo userInfo = userDetails.getUserInfo();
 			modelAndView.addObject("userName", userInfo.getUserName());
-//			modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 
 		}catch(Exception e) {
 		}
-
-//		List<Community> communityList = communityService.selectAllCommunity(params);
-//		modelAndView.addObject("communityList", communityList);
-//
-//		modelAndView.setViewName("community");
-
-//		modelAndView.addObject("community", new Community());
 
 		modelAndView.setViewName("communityWrite");
 
@@ -93,7 +83,6 @@ public class CommunityController {
 			modelAndView.addObject("userName", userInfo.getUserName());
 			params.setUser_id(userInfo.getId());
 
-//			modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 
 		}catch(Exception e) {
 		}
@@ -156,9 +145,6 @@ public class CommunityController {
 
 		}
 
-//		Community community2 = communityService.selectCommunityById(Integer.parseInt(id));
-
-//		community.setCurrentPageNo(Integer.parseInt(pageNum));
 		modelAndView.addObject("community", community);
 
 		modelAndView.setViewName("communityWrite");
