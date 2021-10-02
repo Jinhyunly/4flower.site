@@ -51,8 +51,6 @@ public class GalleryController {
 				modelAndView.addObject("userId", userInfo.getLoginId());
 			}
 
-			//modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-
 		}catch(Exception e) {
 
 		}
@@ -90,25 +88,6 @@ public class GalleryController {
 		return modelAndView;
 
 	}
-
-	//https://stackoverflow.com/questions/24256051/delete-or-put-methods-in-thymeleaf
-	//@DeleteMapping("/gallery/{id}")
-//	@RequestMapping(value="/gallery/{id}", method=RequestMethod.DELETE)
-//	public String galleryDelete(HttpServletRequest request) throws Exception{
-//
-//		String abt = "";
-//
-//		return abt;
-//	}
-//
-//	@PutMapping("/gallery/{id}")
-//	public String galleryPut(HttpServletRequest request) throws Exception{
-//
-//		String abt = "";
-//
-//		return abt;
-//
-//	}
 
 	@PostMapping("/gallery/{id}")
 	public ModelAndView galleryPost(@PathVariable("id") String id, @Valid Files file, HttpServletRequest request, Principal principal) throws Exception{
@@ -202,10 +181,7 @@ public class GalleryController {
 		File destinationFile;
 		String destinationFileName;
 
-		//C:\dev\eclipse\git\4flower_git\4flower_git\4flowerSite\bin\main\static\gallery
 		String path = new ClassPathResource("/static/gallery").getFile().getAbsolutePath();
-
-		//String fileUrl = path +"\\";
 		String fileUrl = path +"/";
 
 		do {
@@ -227,31 +203,11 @@ public class GalleryController {
 		fileObj.setGallery_fileName(destinationFileName);
 		fileObj.setGallery_fileOriName(sourceFileName);
 		fileObj.setGallery_url(fileUrl + destinationFileName);
-		//fileObj.setGallery_url("/static/gallery");
 		fileObj.setGallery_title(galleryTitle);
 		fileObj.setGallery_content(galleryContent);
 		fileObj.setEnt_kbn("1");
 
 		fileService.saveFiles(fileObj);
-
-//		List<Files> fileList =  fileService.selectAll();
-
-		ModelAndView modelAndView = new ModelAndView();
-
-//		Authentication authentication = (Authentication) principal;
-//		MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
-//		UserInfo userInfo = userDetails.getUserInfo();
-//		modelAndView.addObject("userName", userInfo.getUserName());
-//
-//		if("momo".equals(userInfo.getLoginId())){
-//			modelAndView.addObject("userId", userInfo.getLoginId());
-//		}
-
-//		modelAndView.addObject("fileList", fileList);
-//    modelAndView.setViewName("gallery");
-
-
-
 		return new ModelAndView("redirect:/gallery");
 
 	}
