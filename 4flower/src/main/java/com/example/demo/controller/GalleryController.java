@@ -98,7 +98,6 @@ public class GalleryController {
 		if("delete".equals(method)) {
 			Files file1 = fileService.getFileById(id);
 			String sourceFileName = file1.getGallery_fileName();
-//			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
 
 			String path = new ClassPathResource("/static/gallery").getFile().getAbsolutePath();
 			String fileUrl = path +"\\";
