@@ -51,7 +51,6 @@ public class InquireController {
 				UserInfo userInfo = userDetails.getUserInfo();
 				modelAndView.addObject("userName", userInfo.getUserName());
 
-//				modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 
 			}catch(Exception e) {
 			}
@@ -63,9 +62,6 @@ public class InquireController {
 				message= e.getMessage();
 			}
 
-//			mail.setMailTo("dbdbddipp@gmail.com");
-//
-//			inquireService.sendSimpleMessage(mail);
 
 			if(message == "") {
 				message= "Send Mail Success.";
