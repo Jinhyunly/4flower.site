@@ -27,7 +27,6 @@ public class NoticeController {
 	@Autowired
   private NoticeService noticeService;
 
-	//@RequestMapping(value = "**/notice", method = RequestMethod.GET)
 	@RequestMapping(value = "/notice")
 	public ModelAndView notice(@ModelAttribute("params") Notice params, Principal principal) {
 
@@ -38,7 +37,6 @@ public class NoticeController {
 			MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
 			UserInfo userInfo = userDetails.getUserInfo();
 			modelAndView.addObject("userName", userInfo.getUserName());
-//			modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 
 		}catch(Exception e) {
 		}
