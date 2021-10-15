@@ -91,30 +91,4 @@ public class UserController {
         return modelAndView;
     }
 
-//    @GetMapping("home")
-//    public ModelAndView home(HttpSession session){
-//        ModelAndView modelAndView = new ModelAndView();
-//
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        UserPrincipal userPrincipal = (UserPrincipal) auth.getPrincipal();
-//        System.out.println(userPrincipal.toString());
-//
-//        session.setAttribute("userPrincipal", userPrincipal);
-//
-//        //modelAndView.addObject("userName", "Welcome " + userPrincipal.getName() + " (" + userPrincipal.getId() + ")");
-//        modelAndView.addObject("userName", userPrincipal.getName());
-//        modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-//        //modelAndView.setViewName("home");
-//        modelAndView.setViewName("index");
-//        return modelAndView;
-//    }
-
-//    @GetMapping("exception")
-//    public ModelAndView getUserPermissionExceptionPage() {
-//        ModelAndView mv = new ModelAndView();
-//
-//        mv.setViewName("access-denied");
-//        return mv;
-//    }
-
 }
