@@ -19,9 +19,7 @@ public class WebController {
 
 	@RequestMapping("/")
 	public ModelAndView home(HttpServletRequest request, HttpSession session, Principal principal) {
-//	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView();
-//		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 		String logoutFlg = request.getParameter("logout");
     String logoutMessage = "";
