@@ -15,7 +15,6 @@ import com.example.demo.security.service.MyUserDetails;
 
 @Controller
 public class WebController {
-	//@RequestMapping(value = "/", method = RequestMethod.GET)
 
 	@RequestMapping("/")
 	public ModelAndView home(HttpServletRequest request, HttpSession session, Principal principal) {
