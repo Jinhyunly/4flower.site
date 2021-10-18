@@ -189,11 +189,6 @@ public class GalleryController {
 		} while (destinationFile.exists());
 
 
-		//local install
-//		destinationFile.getParentFile().mkdirs();
-//		file.transferTo(destinationFile);
-
-
 		//war배포 remote install
 		SftpTransfer sftp = new SftpTransfer();
 		sftp.transferLocalFileToRemoteHost(file, destinationFileName);
